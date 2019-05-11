@@ -8,20 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		EA2E1A9F2284083B00CD1C6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E1A9E2284083B00CD1C6E /* AppDelegate.swift */; };
-		EA2E1AA12284083B00CD1C6E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E1AA02284083B00CD1C6E /* ViewController.swift */; };
+		EA2E1AA12284083B00CD1C6E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E1AA02284083B00CD1C6E /* GameViewController.swift */; };
 		EA2E1AA42284083B00CD1C6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA2E1AA22284083B00CD1C6E /* Main.storyboard */; };
 		EA2E1AA62284083D00CD1C6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA2E1AA52284083D00CD1C6E /* Assets.xcassets */; };
 		EA2E1AA92284083D00CD1C6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA2E1AA72284083D00CD1C6E /* LaunchScreen.storyboard */; };
+		EA2E1AB222840F3700CD1C6E /* WordGridGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E1AB122840F3700CD1C6E /* WordGridGenerator.swift */; };
+		EA2E1AB6228410F800CD1C6E /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E1AB5228410F800CD1C6E /* GridCollectionViewCell.swift */; };
+		EA3847B42285595F0037717C /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3847B32285595F0037717C /* Line.swift */; };
+		EAD306182285E64C004E57D8 /* LinesOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD306172285E64C004E57D8 /* LinesOverlay.swift */; };
+		EAD3061C228615BE004E57D8 /* WordListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3061B228615BE004E57D8 /* WordListCollectionView.swift */; };
+		EAD3061F228616B1004E57D8 /* WordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3061E228616B1004E57D8 /* WordCollectionViewCell.swift */; };
+		EAD3062222863142004E57D8 /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3062122863142004E57D8 /* IntExtension.swift */; };
+		EAD3062422864923004E57D8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3062322864923004E57D8 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EA2E1A9B2284083B00CD1C6E /* WordSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2E1A9E2284083B00CD1C6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EA2E1AA02284083B00CD1C6E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EA2E1AA02284083B00CD1C6E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		EA2E1AA32284083B00CD1C6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA2E1AA52284083D00CD1C6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA2E1AA82284083D00CD1C6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA2E1AAA2284083D00CD1C6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA2E1AB122840F3700CD1C6E /* WordGridGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGridGenerator.swift; sourceTree = "<group>"; };
+		EA2E1AB5228410F800CD1C6E /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
+		EA3847B32285595F0037717C /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		EAD306172285E64C004E57D8 /* LinesOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesOverlay.swift; sourceTree = "<group>"; };
+		EAD3061B228615BE004E57D8 /* WordListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordListCollectionView.swift; sourceTree = "<group>"; };
+		EAD3061E228616B1004E57D8 /* WordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCollectionViewCell.swift; sourceTree = "<group>"; };
+		EAD3062122863142004E57D8 /* IntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		EAD3062322864923004E57D8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +70,62 @@
 		EA2E1A9D2284083B00CD1C6E /* WordSearch */ = {
 			isa = PBXGroup;
 			children = (
+				EAD30626228650C1004E57D8 /* Views */,
+				EAD30625228650AF004E57D8 /* Controllers */,
+				EAD3062022863131004E57D8 /* Helpers */,
+				EAD3061D2286169E004E57D8 /* Cells */,
+				EA2E1AB022840F2800CD1C6E /* WordGrid */,
 				EA2E1A9E2284083B00CD1C6E /* AppDelegate.swift */,
-				EA2E1AA02284083B00CD1C6E /* ViewController.swift */,
 				EA2E1AA22284083B00CD1C6E /* Main.storyboard */,
 				EA2E1AA52284083D00CD1C6E /* Assets.xcassets */,
 				EA2E1AA72284083D00CD1C6E /* LaunchScreen.storyboard */,
 				EA2E1AAA2284083D00CD1C6E /* Info.plist */,
 			);
 			path = WordSearch;
+			sourceTree = "<group>";
+		};
+		EA2E1AB022840F2800CD1C6E /* WordGrid */ = {
+			isa = PBXGroup;
+			children = (
+				EA2E1AB122840F3700CD1C6E /* WordGridGenerator.swift */,
+			);
+			path = WordGrid;
+			sourceTree = "<group>";
+		};
+		EAD3061D2286169E004E57D8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EA2E1AB5228410F800CD1C6E /* GridCollectionViewCell.swift */,
+				EAD3061E228616B1004E57D8 /* WordCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		EAD3062022863131004E57D8 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				EAD3062122863142004E57D8 /* IntExtension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		EAD30625228650AF004E57D8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EA2E1AA02284083B00CD1C6E /* GameViewController.swift */,
+				EAD3062322864923004E57D8 /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EAD30626228650C1004E57D8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EA3847B32285595F0037717C /* Line.swift */,
+				EAD3061B228615BE004E57D8 /* WordListCollectionView.swift */,
+				EAD306172285E64C004E57D8 /* LinesOverlay.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,8 +199,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA2E1AA12284083B00CD1C6E /* ViewController.swift in Sources */,
+				EAD306182285E64C004E57D8 /* LinesOverlay.swift in Sources */,
+				EA2E1AB6228410F800CD1C6E /* GridCollectionViewCell.swift in Sources */,
+				EAD3061F228616B1004E57D8 /* WordCollectionViewCell.swift in Sources */,
+				EAD3061C228615BE004E57D8 /* WordListCollectionView.swift in Sources */,
+				EA2E1AA12284083B00CD1C6E /* GameViewController.swift in Sources */,
+				EAD3062222863142004E57D8 /* IntExtension.swift in Sources */,
+				EA2E1AB222840F3700CD1C6E /* WordGridGenerator.swift in Sources */,
 				EA2E1A9F2284083B00CD1C6E /* AppDelegate.swift in Sources */,
+				EA3847B42285595F0037717C /* Line.swift in Sources */,
+				EAD3062422864923004E57D8 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

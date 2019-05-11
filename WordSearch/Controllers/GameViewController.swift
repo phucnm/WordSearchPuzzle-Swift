@@ -28,7 +28,11 @@ class GameViewController: UIViewController {
 
     /// Used to display elapsed time of the game.
     /// The timer can be paused and resumed.
-    private var elapsedSeconds: Int = 0
+    private var elapsedSeconds: Int = 0 {
+        didSet {
+            timerLabel.text = elapsedSeconds.formattedTime()
+        }
+    }
     private var timer: Timer?
     private var isPaused: Bool = false {
         didSet {
@@ -135,7 +139,6 @@ class GameViewController: UIViewController {
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
             self.elapsedSeconds += 1
-            self.timerLabel.text = self.elapsedSeconds.formattedTime()
         })
     }
 
