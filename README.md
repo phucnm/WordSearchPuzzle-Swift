@@ -1,6 +1,8 @@
 # WordSearch
 Word Search Puzzle Game
 
+![](ws.gif)
+
 This project is a word search game written in Swift with basic features:
 - The puzzles are generated randomly by a backtracking algorithm.
 - The algorithm supports 8 word directions: up, down, left, right, up-left, up-right, down-left, down-right
