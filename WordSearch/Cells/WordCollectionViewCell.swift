@@ -16,6 +16,7 @@ class WordCollectionViewCell: UICollectionViewCell {
 
     func configure(with text: String, selected: Bool) {
         if selected {
+            // Strike through the word if it's selected.
             let attrString = NSMutableAttributedString(string: text)
             let attrsDict = [
                 NSAttributedString.Key.strikethroughStyle: 2,

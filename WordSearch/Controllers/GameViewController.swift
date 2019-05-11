@@ -8,8 +8,8 @@
 
 import UIKit
 
+/// This is the game view controller
 class GameViewController: UIViewController {
-
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var timerLabel: UILabel!
@@ -18,7 +18,6 @@ class GameViewController: UIViewController {
     @IBOutlet weak var wordListCollectionView: WordListCollectionView!
 
     lazy private var gradientLayer: CAGradientLayer = CAGradientLayer()
-
     lazy fileprivate var gridGenerator: WordGridGenerator = {
         return WordGridGenerator(words: words, row: nRow, column: nCol)
     }()
@@ -27,8 +26,8 @@ class GameViewController: UIViewController {
     fileprivate var grid: Grid = Grid()
     private let words = ["SWIFT", "KOTLIN", "OBJECTIVEC", "VARIABLE", "JAVA", "MOBILE"]
 
-
-    /// Used to display elapsed time of the game
+    /// Used to display elapsed time of the game.
+    /// The timer can be paused and resumed.
     private var elapsedSeconds: Int = 0
     private var timer: Timer?
     private var isPaused: Bool = false {
@@ -41,24 +40,18 @@ class GameViewController: UIViewController {
         }
     }
 
+    /// We compute letter cell size. We then notify this to the overlay
+    /// to draw the lines.
+    /// This should be updated properly in case orientation changes.
     private var cellSize: CGSize {
         let w = gridCollectionView.bounds.width / CGFloat(nCol)
         let h = gridCollectionView.bounds.height / CGFloat(nRow)
         return CGSize(width: w, height: h)
     }
-    lazy private var selectingStyle: LineStyle = LineStyle(
-        opacity: 0.5,
-        lineWidth: cellSize.width * 0.8,
-        strokeColor:
-        UIColor.blue.cgColor
-    )
-    private var selectingLine: Line?
-    private var tempStartingPoint: CGPoint?
-    private var temporaryPath: UIBezierPath?
-    private var temporaryShapeLayer: CAShapeLayer?
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        // Because there's no layout constraint for a CALayer.
         gradientLayer.frame = gridCollectionView.bounds
     }
 
@@ -128,10 +121,16 @@ class GameViewController: UIViewController {
         overlayView.col = nCol
     }
 
+
+    /// Helper function to get row and col from an indexPath.
+    ///
+    /// - Parameter index: an index from an indexPath.
+    /// - Returns: row and col of the cell in the grid.
     private func position(from index: Int) -> Position {
         return Position(row: index / nRow, col: index % nCol)
     }
 
+    /// Start and display clock time.
     private func startTimer() {
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
@@ -157,24 +156,32 @@ class GameViewController: UIViewController {
         switch gestureRecognizer.state {
         case .began:
             overlayView.addTempLine(at: pos)
+            // Select item to animate the cell
+            // Since we set the collection view `selection mode` to single
+            // This means only one letter is animated at a time.
+            // So in `.ended` event, we just need to deselect one cell.
             gridCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
         case .changed:
             if overlayView.moveTempLine(to: pos) {
                 gridCollectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
             }
         case .ended:
+            // Stop animation
             gridCollectionView.deselectItem(at: indexPath, animated: true)
             guard let startPos = overlayView.tempLine?.startPos else {
                 return
             }
+            // Get the word from the pre-computed map
             let key = WordGridGenerator.wordKey(for: startPos, and: pos)
             if let word = gridGenerator.wordsMap[key] {
                 overlayView.acceptLastLine()
                 wordListCollectionView.select(word: word)
                 if overlayView.permanentLines.count == gridGenerator.words.count {
+                    // Pause the time because user has won the game.
                     timer?.invalidate()
                 }
             }
+            // Remove the temp line
             overlayView.removeTempLine()
         default: break
         }
@@ -182,6 +189,7 @@ class GameViewController: UIViewController {
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: nil) { (_) in
+            // Force re-draw the collection views when orientation changes.
             self.gridCollectionView.collectionViewLayout.invalidateLayout()
             self.wordListCollectionView.collectionViewLayout.invalidateLayout()
         }

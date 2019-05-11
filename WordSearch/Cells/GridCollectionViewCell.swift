@@ -18,6 +18,7 @@ class GridCollectionViewCell: UICollectionViewCell {
 
     override var isSelected: Bool {
         didSet {
+            // Scale up the letter if it's selected.
             let transform = isSelected ? CGAffineTransform(scaleX: animationScaleFactor, y: animationScaleFactor) : .identity
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 5, options: [], animations: {
                 self.label.transform = transform

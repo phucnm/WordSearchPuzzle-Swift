@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Just show home screen
 class MainViewController: UIViewController {
 
     @IBOutlet weak var playButton: UIButton!

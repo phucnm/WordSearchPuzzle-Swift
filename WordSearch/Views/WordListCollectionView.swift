@@ -9,12 +9,16 @@
 import Foundation
 import UIKit
 
+/// This view shows the list of words to be searched
 class WordListCollectionView: UICollectionView {
 
+    /// The left and right inset of the collection view
     private let inset: CGFloat = 10
-
     fileprivate let cellId = "WordCell"
+
+    /// This is computed to store states of the words if they are selected or not
     fileprivate var wordSelectedMap: [String: Bool] = [:]
+
     var words: [String] = [] {
         didSet {
             wordSelectedMap = Dictionary(uniqueKeysWithValues: words.lazy.map { ($0, false) })
@@ -28,6 +32,7 @@ class WordListCollectionView: UICollectionView {
         dataSource = self
     }
 
+    /// A corrected word has been selected
     func select(word: String) {
         guard let index = words.firstIndex(of: word) else {
             return
@@ -37,6 +42,7 @@ class WordListCollectionView: UICollectionView {
         reloadItems(at: [indexPath])
     }
 
+    /// Reset states of words and collection view
     func reset() {
         for key in wordSelectedMap.keys { wordSelectedMap[key] = false }
         reloadData()
